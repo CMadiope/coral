@@ -1,1 +1,103 @@
-<p>home works!</p>
+<!-- banner -->
+<div class="px-6 h-[250px] md:full">
+  <div
+    class="bg-[url(src/assets/home/hero.png)] bg-center bg-cover bg-no-repeat w-full h-full md:bg-cover pt-[50px] pl-[200px] sm:pl-[350px] rounded-xl md:pl-[450px] lg:pl-[55%]"
+  >
+    <div class="text-primary bg-white/60 px-6 py-4 lg:py-10 hero-content">
+      <h1 class="font-bold text-3xl lg:text-4xl">Carry your Funk</h1>
+      <p class="text-sm py-2 lg:text-base">
+        Trendy handbags collection for your party animal
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- new arrivals -->
+<div class="px-6 py-10">
+  <div class="flex justify-between w-full items-center">
+    <h3 class="font-semibold text-lg">New Arrivals</h3>
+    <div class="flex items-center gap-2 cursor-pointer text-primary text-xs">
+      <p>View All</p>
+      <fa-icon [icon]="arrow"></fa-icon>
+    </div>
+  </div>
+  <!-- product card -->
+  <div
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pt-5"
+  >
+    <div class="flex flex-col">
+      <img src="assets/home/item--1.png" alt="" />
+      <div class="flex justify-between pt-4">
+        <h4>Grande</h4>
+        <div class="text-lg hover:text-red-500 cursor-pointer"></div>
+      </div>
+      <div class="flex flex-col gap-px capitalize pt-1">
+        <p class="text-gray-400">Basson pouch</p>
+        <p class="font-semibold">$ 39.50</p>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <img src="assets/home/item--1.png" alt="/" />
+      <div class="flex justify-between pt-4">
+        <h4>Grande</h4>
+        <div class="text-lg hover:text-red-500 cursor-pointer"></div>
+      </div>
+      <div class="flex flex-col gap-px capitalize pt-1">
+        <p class="text-gray-400">Basson pouch</p>
+        <p class="font-semibold">$ 39.50</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- hand picked -->
+<div class="bg-primary text-white p-6">
+  <h3 class="text-lg pb-4">Handpicked Collections</h3>
+  <!-- cards -->
+  <div
+    class="flex grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 capitalize"
+  >
+    <div class="relative text-black">
+      <img src="assets/home/item--1.png" alt="/" class="rounded-xl" />
+      <p class="absolute bottom-5 left-5">personal care</p>
+    </div>
+    <div class="relative text-black">
+      <img src="assets/home/item--1.png" alt="/" class="rounded-xl" />
+      <p class="absolute bottom-5 left-5">personal care</p>
+    </div>
+  </div>
+</div>
+
+<!-- lifestyle -->
+<div class="p-6 h-[250px] md:h-[350px] md:full">
+  <div
+    class="bg-[url(src/assets/home/lifestyle.png)] bg-center bg-cover bg-no-repeat w-full h-full md:bg-cover rounded-xl text-[#97451F]"
+  >
+    <div class="px-4 pt-[40px] md:pt-[100px]">
+      <h6 class="uppercase text-sm">Lifestyle</h6>
+      <h3 class="text-xl font-semibold md:text-3xl max-md:w-[300px]">
+        Makeup Accessories from Top Brands
+      </h3>
+    </div>
+  </div>
+</div>
+
+<!-- skin care -->
+<div class="grid grid-cols-2 gap-5 p-6">
+  <div class="relative text-[#A53F64] bg-[#F8CDE1]">
+    <img src="assets/home/care-1.png" alt="/" class="w-full" />
+    <p
+      class="absolute font-bold top-6 right-[25%] w-[50px] sm:text-lg md:text-xl lg:text-2xl"
+    >
+      Skincare Essentials
+    </p>
+  </div>
+  <div class="relative text-primary">
+    <img src="assets/home/care-2.png" alt="/" class="w-full h-full" />
+    <p
+      class="absolute font-bold top-6 right-[25%] w-[50px] sm:text-lg md:text-xl lg:text-2xl"
+    >
+      Facepacks & Peels
+    </p>
+  </div>
+</div>

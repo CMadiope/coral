@@ -1,0 +1,48 @@
+<footer
+  class="bg-primary text-white flex flex-col md:flex-row gap-5 justify-between p-6 md:px-12 lg:px-16"
+>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+    <div>
+      <h5 class="pb-2">Shop by category</h5>
+      <div class="flex flex-col text-sm text-gray-400 gap-2">
+        <a routerLink="/men">Men</a>
+        <a routerLink="/women">Women</a>
+        <a routerLink="/jewelery">Jewelery</a>
+        <a routerLink="/electronics">Electronics</a>
+      </div>
+    </div>
+    <div>
+      <h5 class="pb-2">About</h5>
+      <div class="flex flex-col text-sm text-gray-400 gap-2">
+        <a routerLink="#">Contact</a>
+        <a routerLink="/about">About Us</a>
+        <a routerLink="#">Carrers</a>
+        <a routerLink="#">Press</a>
+      </div>
+    </div>
+    <div>
+      <h5 class="pb-2">Policy</h5>
+      <div class="flex flex-col text-sm text-gray-400 gap-2">
+        <a routerLink="#">Terms of Use</a>
+        <a routerLink="#">Return Policy</a>
+        <a routerLink="#">Security</a>
+        <a routerLink="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="flex gap-3 text-xl">
+      <fa-icon [icon]="face"></fa-icon>
+      <fa-icon [icon]="you"></fa-icon>
+      <fa-icon [icon]="twitter"></fa-icon>
+      <fa-icon [icon]="insta"></fa-icon>
+    </div>
+    <p class="pt-3 text-base flex gap-2 items-center">
+      <fa-icon [icon]="location"></fa-icon>
+      <span class="text-sm">South Africa</span>
+    </p>
+    <p class="text-xs text-gray-500 py-2">
+      &copy;2023 | Cora All rights Reserved
+    </p>
+  </div>
+</footer>
