@@ -1,0 +1,41 @@
+<nav class="" clickOutside (clickOutside)="clickedOutside()">
+  <div class="p-6 flex justify-between items-center">
+    <div class="">
+      <img src="assets/logo.png" alt="" />
+    </div>
+    <div>
+      <div class="hidden md:block lg-menu">
+        <ul class="flex gap-3 text-lg">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/men">Men</a></li>
+          <li><a routerLink="/women">Women</a></li>
+          <li><a routerLink="/women">Jewelery</a></li>
+          <li><a routerLink="/electronics">Electronics</a></li>
+          <li><a routerLink="/about">About</a></li>
+        </ul>
+      </div>
+      <div class="cursor-pointer md:hidden" (click)="showMobileNav()">
+        <fa-icon [icon]="icon" class="text-xl"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <!-- mobile nav -->
+  <div
+    class="fixed top-0 right-[-100%] z-20 w-[50%] h-screen overflow-hidden md:hidden bg-black"
+    [class.mobile]="mobile"
+  >
+    <div class="flex justify-end p-6 text-white font-semibold">
+      <p class="text-xl cursor-pointer" (click)="showMobileNav()">X</p>
+    </div>
+    <ul
+      class="flex flex-col gap-3 text-left pt-[70px] text-white font-bold text-xl pl-10"
+    >
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/men">Men</a></li>
+      <li><a routerLink="/women">Women</a></li>
+      <li><a routerLink="/women">Jewelery</a></li>
+      <li><a routerLink="/electronics">Electronics</a></li>
+      <li><a routerLink="/about">About</a></li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,12 @@
+.lg-menu li:hover {
+  background: #cccaca;
+  border-radius: 50%;
+}
+.lg-menu li {
+  padding: 2px 8px;
+}
+
+.mobile {
+  right: 0;
+  transition: 0.4s ease-in-out;
+}
