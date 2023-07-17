@@ -1,0 +1,27 @@
+<div
+  class="flex flex-col items-center hover:shadow-2xl p-4 cursor-pointer relative"
+  (click)="openProductDetail(product.id)"
+>
+  <img
+    [src]="product.image"
+    alt=""
+    class="object-contain w-[286px] h-[280px]"
+  />
+  <div class="flex justify-between items-center">
+    <div>
+      <div class="flex justify-between pt-4">
+        <h4 class="text-sm">
+          {{ product.title }}
+        </h4>
+        <div class="text-lg hover:text-red-500 cursor-pointer"></div>
+      </div>
+      <div class="flex flex-col gap-px capitalize pt-1">
+        <p class="text-gray-400">Basson pouch</p>
+        <p class="font-semibold">$ {{ product.price }}</p>
+      </div>
+    </div>
+    <div class="absolute bottom-5 right-5 hover:text-red-500">
+      <fa-icon [icon]="heart"></fa-icon>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="p-6">
+  <div class="grid md:grid-cols-2 gap-2 md:px-20">
+    <div class="col-span-1">
+      <img [src]="product.image" alt="" class="w-[500px] h-[550px]" />
+    </div>
+    <div class="col-span-1 max-md:pt-10">
+      <h1 class="text-lg font-thin">
+        {{ product.title }}
+      </h1>
+      <div class="text-2xl font-bold py-2">
+        <p>${{ product.price }}</p>
+      </div>
+      <div class="flex text-sm gap-2 items-center">
+        <p class="font-semibold">Quantity:</p>
+        <div class="flex gap-4 border px-4 py-2">
+          <p class="cursor-pointer hover:bg-green-400 px-2 hover:text-white">
+            +
+          </p>
+          <p class="cursor-pointer">0</p>
+          <p class="cursor-pointer hover:bg-red-400 px-2 hover:text-white">-</p>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center gap-4 py-12">
+        <div
+          class="border-2 rounded-2xl border-primary flex justify-between items-center text-sm p-4"
+        >
+          <div>
+            <p>Get upto 30% Off on order value above $100</p>
+            <p class="text-gray-500">Terms & conditions</p>
+          </div>
+          <div class="bg-[#F1F1F1] p-3">
+            <p>Use code</p>
+            <p class="font-semibold">ORDER100</p>
+          </div>
+        </div>
+        <div
+          class="border-2 rounded-2xl border-primary flex justify-between items-center text-sm p-4"
+        >
+          <div>
+            <p>Get upto 30% Off on order value above $100</p>
+            <p class="text-gray-500">Terms & conditions</p>
+          </div>
+          <div class="bg-[#F1F1F1] p-3">
+            <p>Use code</p>
+            <p class="font-semibold">ORDER100</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <button
+          class="flex items-center gap-2 text-white bg-primary w-full text-center py-2 rounded-lg justify-center hover:bg-primary/90"
+        >
+          <fa-icon [icon]="cart"></fa-icon>
+          <p>Add To Cart</p>
+        </button>
+
+        <button
+          class="flex items-center gap-2 border-2 border-primary w-full text-center py-2 rounded-lg justify-center hover:bg-black/80 hover:text-white hover:border-none"
+        >
+          <fa-icon [icon]="heart"></fa-icon>
+          <p>Add To Wishlist</p>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="pt-10 pb-28">
+    <h5 class="bg-primary text-white rounded-lg inline-block px-4 py-2">
+      Product Description
+    </h5>
+    <p class="pt-4 text-sm text-[#626262] text-justify">
+      {{ product.description }}
+    </p>
+  </div>
+</div>
