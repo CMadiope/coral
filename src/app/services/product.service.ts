@@ -16,4 +16,21 @@ export class ProductService {
   public getProductDetails(id: string): Observable<Product> {
     return this.http.get<Product>(`https://fakestoreapi.com/products/${id}`);
   }
+
+  public getMen(): Observable<Product[]> {
+    return this.http.get<Product[]>(
+      `https://fakestoreapi.com/products/category/men's%20clothing`
+    );
+  }
+  public getWomen(): Observable<Product[]> {
+    return this.http.get<Product[]>(
+      `https://fakestoreapi.com/products/category/women's%20clothing`
+    );
+  }
+
+  public getJewelery(): Observable<Product[]> {
+    return this.http.get<Product[]>(
+      'https://fakestoreapi.com/products/category/jewelery'
+    );
+  }
 }

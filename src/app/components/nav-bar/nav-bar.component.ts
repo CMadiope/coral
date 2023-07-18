@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faShoppingCart,
+  faHeart,
+  faBars,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,6 +14,9 @@ export class NavBarComponent {
   mobileNav: boolean = false;
   mobile: boolean = false;
   icon = faBars;
+  cart = faShoppingCart;
+  heart = faHeart;
+  productCount: number = 0;
 
   public showMobileNav(): void {
     this.mobileNav = !this.mobileNav;

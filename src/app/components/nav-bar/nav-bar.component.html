@@ -7,11 +7,24 @@
       <div class="hidden md:block lg-menu">
         <ul class="flex gap-3 text-lg">
           <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/men">Men</a></li>
-          <li><a routerLink="/women">Women</a></li>
-          <li><a routerLink="/women">Jewelery</a></li>
+          <li><a routerLink="/clothing">Clothing</a></li>
+          <li><a routerLink="/jewelery">Jewelery</a></li>
           <li><a routerLink="/electronics">Electronics</a></li>
-          <li><a routerLink="/about">About</a></li>
+          <li>
+            <a routerLink="/cart" class="relative">
+              <fa-icon [icon]="cart"></fa-icon>
+              <span
+                class="bg-red-600 text-white text-xs w-4 h-4 rounded-full absolute -top-2 -right-2 flex justify-center"
+              >
+                {{ productCount }}
+              </span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/wishlist">
+              <fa-icon [icon]="heart"></fa-icon>
+            </a>
+          </li>
         </ul>
       </div>
       <div class="cursor-pointer md:hidden" (click)="showMobileNav()">
@@ -31,11 +44,10 @@
       class="flex flex-col gap-3 text-left pt-[70px] text-white font-bold text-xl pl-10"
     >
       <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/men">Men</a></li>
-      <li><a routerLink="/women">Women</a></li>
-      <li><a routerLink="/women">Jewelery</a></li>
+      <li><a routerLink="/clothing">Clothing</a></li>
+      <li><a routerLink="/jewelery">Jewelery</a></li>
       <li><a routerLink="/electronics">Electronics</a></li>
-      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/wishlist">Wishlist</a></li>
     </ul>
   </div>
 </nav>
