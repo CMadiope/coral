@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ClothingComponent } from './components/clothing/clothing.component';
 import { JeweleryComponent } from './components/jewelery/jewelery.component';
+import { ElectronicsComponent } from './components/electronics/electronics.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'jewelery',
     component: JeweleryComponent,
+  },
+  {
+    path: 'electronics',
+    component: ElectronicsComponent,
   },
 ];
 

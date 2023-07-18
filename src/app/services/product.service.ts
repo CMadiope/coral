@@ -33,4 +33,10 @@ export class ProductService {
       'https://fakestoreapi.com/products/category/jewelery'
     );
   }
+
+  public getElectronics(): Observable<Product[]> {
+    return this.http.get<Product[]>(
+      'https://fakestoreapi.com/products/category/electronics'
+    );
+  }
 }
