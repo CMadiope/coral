@@ -4,6 +4,9 @@ import {
   faHeart,
   faBars,
 } from '@fortawesome/free-solid-svg-icons';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectProductCount } from 'src/app/state/product/product.selectors';
 
 @Component({
   selector: 'app-nav-bar',
@@ -16,7 +19,11 @@ export class NavBarComponent {
   icon = faBars;
   cart = faShoppingCart;
   heart = faHeart;
-  productCount: number = 0;
+  productCount$: Observable<number>;
+
+  constructor(private store: Store) {
+    this.productCount$ = this.store.select(selectProductCount);
+  }
 
   public showMobileNav(): void {
     this.mobileNav = !this.mobileNav;

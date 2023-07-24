@@ -5,6 +5,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ClothingComponent } from './components/clothing/clothing.component';
 import { JeweleryComponent } from './components/jewelery/jewelery.component';
 import { ElectronicsComponent } from './components/electronics/electronics.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'electronics',
     component: ElectronicsComponent,
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
   },
 ];
 

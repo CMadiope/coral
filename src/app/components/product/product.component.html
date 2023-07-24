@@ -1,11 +1,9 @@
-<div
-  class="flex flex-col items-center hover:shadow-2xl p-4 cursor-pointer relative"
-  (click)="openProductDetail(product.id)"
->
+<div class="flex flex-col items-center hover:shadow-2xl p-4 relative">
   <img
     [src]="product.image"
     alt=""
-    class="object-contain w-[286px] h-[280px]"
+    class="object-contain w-[286px] h-[280px] cursor-pointer"
+    (click)="openProductDetail(product.id)"
   />
   <div class="flex justify-between items-center">
     <div>
@@ -20,8 +18,16 @@
         <p class="font-semibold">$ {{ product.price }}</p>
       </div>
     </div>
-    <div class="absolute bottom-5 right-5 hover:text-red-500">
-      <fa-icon [icon]="heart"></fa-icon>
+    <div
+      class="absolute bottom-5 right-5 hover:text-red-500 cursor-pointer"
+      *ngIf="router.url == '/cart' || router.url == '/wishlist'"
+      click="removeProduct(product.id)"
+    >
+      <fa-icon [icon]="trash" ></fa-icon>
     </div>
   </div>
 </div>
+
+<!-- <ng-template #add class="absolute bottom-5 right-5 hover:text-red-500">
+  <fa-icon [icon]="heart"></fa-icon>
+</ng-template> -->

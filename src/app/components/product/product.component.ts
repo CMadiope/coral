@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product.interface';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Store } from '@ngrx/store';
+import { removeProduct } from 'src/app/state/product/product.action';
 
 @Component({
   selector: 'app-product',
@@ -10,10 +12,15 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProductComponent {
   heart = faHeart;
+  trash = faTrash;
   @Input() product: Product;
-  constructor(private router: Router) {}
+  constructor(public router: Router, private store: Store) {}
 
   public openProductDetail(id: string): void {
     this.router.navigate(['details', id]);
+  }
+
+  public removeProduct(product:Product):void{
+    this.store.dispatch(removeProduct({id:product.id}))
   }
 }

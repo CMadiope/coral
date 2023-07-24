@@ -14,6 +14,11 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ClothingComponent } from './components/clothing/clothing.component';
 import { JeweleryComponent } from './components/jewelery/jewelery.component';
 import { ElectronicsComponent } from './components/electronics/electronics.component';
+import { CartComponent } from './components/cart/cart.component';
+import { StoreModule } from '@ngrx/store';
+import { productReducer } from './state/product/product.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { HydrationEffects } from './state/hydration/hydration.effects';
 
 @NgModule({
   declarations: [
@@ -27,12 +32,15 @@ import { ElectronicsComponent } from './components/electronics/electronics.compo
     ClothingComponent,
     JeweleryComponent,
     ElectronicsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    StoreModule.forRoot({ products: productReducer }),
+    EffectsModule.forRoot([HydrationEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
