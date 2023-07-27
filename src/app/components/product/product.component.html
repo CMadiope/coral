@@ -20,8 +20,15 @@
     </div>
     <div
       class="absolute bottom-5 right-5 hover:text-red-500 cursor-pointer"
-      *ngIf="router.url == '/cart' || router.url == '/wishlist'"
+      *ngIf="router.url == '/cart'"
       (click)="removeProduct(product)"
+    >
+      <fa-icon [icon]="trash"></fa-icon>
+    </div>
+    <div
+      class="absolute bottom-5 right-5 hover:text-red-500 cursor-pointer"
+      *ngIf="router.url == '/wishlist'"
+      (click)="removeWishlist(product)"
     >
       <fa-icon [icon]="trash"></fa-icon>
     </div>

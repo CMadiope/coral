@@ -20,10 +20,10 @@ export class NavBarComponent {
   icon = faBars;
   cart = faShoppingCart;
   heart = faHeart;
-  productCount$: Observable<number>;
+  productCount$ = this.store.select(selectProductCount);
 
   constructor(private store: Store<AppState>) {
-    this.productCount$ = this.store.select(selectProductCount);
+    //this.productCount$ = this.store.select(selectProductCount);
   }
 
   public showMobileNav(): void {

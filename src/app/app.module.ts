@@ -19,6 +19,7 @@ import { StoreModule } from '@ngrx/store';
 import { productReducer } from './state/product/product.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { HydrationEffects } from './state/hydration/hydration.effects';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HydrationEffects } from './state/hydration/hydration.effects';
     JeweleryComponent,
     ElectronicsComponent,
     CartComponent,
+    WishlistComponent,
   ],
   imports: [
     BrowserModule,

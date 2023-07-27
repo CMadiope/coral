@@ -5,10 +5,16 @@ import { ProductState } from './product.reducer';
 export const selectProducts = (state: AppState) => state.products;
 export const selectAllProducts = createSelector(
   selectProducts,
-  (state: ProductState) => state.products
+  (state: ProductState) => state.cart
 );
 
 export const selectProductCount = createSelector(
-  createFeatureSelector('products'),
-  (state: ProductState) => state.products.length
+  selectProducts,
+  (state: ProductState) => state.cart.length
+);
+
+export const selectWishlist = (state: AppState) => state.products;
+export const selectWishlistTotal = createSelector(
+  selectWishlist,
+  (state: ProductState) => state.wishlist
 );

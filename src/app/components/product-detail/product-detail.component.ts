@@ -51,6 +51,7 @@ export class ProductDetailComponent implements OnInit {
 
     //console.log(this.product);
   }
-
-  
+  public addToWishlist(): void {
+    this.store.dispatch(addToWishlist({ product: this.product }));
+  }
 }

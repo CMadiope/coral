@@ -8,14 +8,14 @@ import {
 } from './product.action';
 
 export interface ProductState {
-  products: Product[];
+  cart: Product[];
   wishlist: Product[];
   totalQuantity: number;
   totalPrice: number;
 }
 
 export const initialState: ProductState = {
-  products: [],
+  cart: [],
   wishlist: [],
   totalQuantity: 0,
   totalPrice: 0,
@@ -24,7 +24,7 @@ export const initialState: ProductState = {
 export const productReducer = createReducer(
   initialState,
   on(addProduct, (state, action) => {
-    let updatedProducts = [...state.products];
+    let updatedProducts = [...state.cart];
     let updatedItemIndex = updatedProducts.findIndex(
       (item) => item.id === action.product.id
     );
@@ -39,7 +39,7 @@ export const productReducer = createReducer(
     }
     return {
       ...state,
-      products: [...updatedProducts],
+      cart: [...updatedProducts],
     };
   }),
 
@@ -60,19 +60,22 @@ export const productReducer = createReducer(
   }),
 
   on(removeProduct, (state, { id }) => {
-    let updatedProducts = [...state.products];
+    let updatedProducts = [...state.cart];
     let updatedItemIndex = updatedProducts.findIndex((item) => item.id === id);
     updatedProducts.splice(updatedItemIndex, 1);
     return {
       ...state,
-      products: updatedProducts,
+      cart: [...updatedProducts],
     };
   }),
 
   on(removeFromWishlist, (state, { id }) => {
+    let updatedProducts = [...state.wishlist];
+    let updatedItemIndex = updatedProducts.findIndex((item) => item.id === id);
+    updatedProducts.splice(updatedItemIndex, 1);
     return {
       ...state,
-      wishlist: state.wishlist.filter((item) => item.id !== id),
+      wishlist: [...updatedProducts],
     };
   })
 );

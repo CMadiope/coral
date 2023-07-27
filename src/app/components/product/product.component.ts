@@ -3,7 +3,10 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product.interface';
 import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
-import { removeProduct } from 'src/app/state/product/product.action';
+import {
+  removeProduct,
+  removeFromWishlist,
+} from 'src/app/state/product/product.action';
 
 @Component({
   selector: 'app-product',
@@ -22,6 +25,10 @@ export class ProductComponent {
 
   public removeProduct(product: Product): void {
     this.store.dispatch(removeProduct({ id: product.id }));
-   // console.log('product removed');
+    // console.log('product removed');
+  }
+
+  public removeWishlist(product: Product): void {
+    this.store.dispatch(removeFromWishlist({ id: product.id }));
   }
 }
