@@ -10,5 +10,5 @@ export const selectAllProducts = createSelector(
 
 export const selectProductCount = createSelector(
   createFeatureSelector('products'),
-  (state: ProductState) => state.totalQuantity
+  (state: ProductState) => state.products.length
 );

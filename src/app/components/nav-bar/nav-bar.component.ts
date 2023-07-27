@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { AppState } from 'src/app/state/app.state';
 import { selectProductCount } from 'src/app/state/product/product.selectors';
 
 @Component({
@@ -21,7 +22,7 @@ export class NavBarComponent {
   heart = faHeart;
   productCount$: Observable<number>;
 
-  constructor(private store: Store) {
+  constructor(private store: Store<AppState>) {
     this.productCount$ = this.store.select(selectProductCount);
   }
 

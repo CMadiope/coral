@@ -24,24 +24,22 @@ export const initialState: ProductState = {
 export const productReducer = createReducer(
   initialState,
   on(addProduct, (state, action) => {
-    let duplicate = false;
-    state.products.map((product: Product) => {
-      if (product.id === action.product.id) {
-        duplicate = true;
-        product.quantity++;
-      }
-    });
-    if (duplicate) {
-      return {
-        ...state,
-        totalQuantity: state.totalQuantity++,
+    let updatedProducts = [...state.products];
+    let updatedItemIndex = updatedProducts.findIndex(
+      (item) => item.id === action.product.id
+    );
+    if (updatedItemIndex < 0) {
+      updatedProducts.push({ ...action.product, quantity: 1 });
+    } else {
+      const updatedItem = {
+        ...updatedProducts[updatedItemIndex],
       };
+      updatedItem.quantity++;
+      updatedProducts[updatedItemIndex] = updatedItem;
     }
     return {
       ...state,
-      products: [...state.products, action.product],
-      totalQuantity: state.totalQuantity + 1,
-      totalPrice: Number((state.totalPrice + action.product.price).toFixed(2)),
+      products: [...updatedProducts],
     };
   }),
 
@@ -62,9 +60,12 @@ export const productReducer = createReducer(
   }),
 
   on(removeProduct, (state, { id }) => {
+    let updatedProducts = [...state.products];
+    let updatedItemIndex = updatedProducts.findIndex((item) => item.id === id);
+    updatedProducts.splice(updatedItemIndex, 1);
     return {
       ...state,
-      products: state.products.filter((product) => product.id !== id),
+      products: updatedProducts,
     };
   }),
 

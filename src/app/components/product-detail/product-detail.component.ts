@@ -9,6 +9,7 @@ import {
   addProduct,
   addToWishlist,
 } from 'src/app/state/product/product.action';
+import { AppState } from 'src/app/state/app.state';
 
 @Component({
   selector: 'app-product-detail',
@@ -27,7 +28,7 @@ export class ProductDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private httpService: ProductService,
     private productService: ProductService,
-    private store: Store
+    private store: Store<AppState>
   ) {}
 
   ngOnInit(): void {
@@ -51,5 +52,5 @@ export class ProductDetailComponent implements OnInit {
     //console.log(this.product);
   }
 
- 
+  
 }

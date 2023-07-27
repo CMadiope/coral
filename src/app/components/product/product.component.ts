@@ -20,7 +20,8 @@ export class ProductComponent {
     this.router.navigate(['details', id]);
   }
 
-  public removeProduct(product:Product):void{
-    this.store.dispatch(removeProduct({id:product.id}))
+  public removeProduct(product: Product): void {
+    this.store.dispatch(removeProduct({ id: product.id }));
+   // console.log('product removed');
   }
 }
