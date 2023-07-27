@@ -1,4 +1,4 @@
-import { createReducer, on } from '@ngrx/store';
+import { ActionReducer, INIT, UPDATE, createReducer, on } from '@ngrx/store';
 import { Product } from 'src/app/models/product.interface';
 import {
   addProduct,
@@ -6,6 +6,7 @@ import {
   removeFromWishlist,
   removeProduct,
 } from './product.action';
+import { AppState } from '../app.state';
 
 export interface ProductState {
   cart: Product[];
@@ -79,3 +80,23 @@ export const productReducer = createReducer(
     };
   })
 );
+
+// export const metaReducerLocalStorage = (
+//   reducer: ActionReducer<AppState>
+// ): ActionReducer<AppState> => {
+//   return (state, action) => {
+//     if (action.type === INIT || action.type === UPDATE) {
+//       const storageValue = localStorage.getItem('state');
+//       if (storageValue) {
+//         try {
+//           return JSON.parse(storageValue);
+//         } catch {
+//           localStorage.removeItem('state');
+//         }
+//       }
+//     }
+//     const nextState = reducer(state, action);
+//     localStorage.setItem('state', JSON.stringify(nextState));
+//     return nextState;
+//   };
+// };

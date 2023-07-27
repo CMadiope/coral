@@ -17,9 +17,8 @@ import { ElectronicsComponent } from './components/electronics/electronics.compo
 import { CartComponent } from './components/cart/cart.component';
 import { StoreModule } from '@ngrx/store';
 import { productReducer } from './state/product/product.reducer';
-import { EffectsModule } from '@ngrx/effects';
-import { HydrationEffects } from './state/hydration/hydration.effects';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { metaReducers } from './state/app.state';
 
 @NgModule({
   declarations: [
@@ -38,11 +37,10 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    StoreModule.forRoot({ products: productReducer }),
-    EffectsModule.forRoot([HydrationEffects]),
+    AppRoutingModule,
+    StoreModule.forRoot({ products: productReducer }, { metaReducers }),
   ],
   providers: [],
   bootstrap: [AppComponent],
