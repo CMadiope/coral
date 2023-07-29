@@ -10,6 +10,7 @@ import {
   addToWishlist,
 } from 'src/app/state/product/product.action';
 import { AppState } from 'src/app/state/app.state';
+import { ToastService } from 'angular-toastify';
 
 @Component({
   selector: 'app-product-detail',
@@ -28,7 +29,8 @@ export class ProductDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private httpService: ProductService,
     private productService: ProductService,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private _toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -48,10 +50,11 @@ export class ProductDetailComponent implements OnInit {
 
   public addProduct(): void {
     this.store.dispatch(addProduct({ product: this.product }));
-
+    this._toastService.success('Product added to cart');
     //console.log(this.product);
   }
   public addToWishlist(): void {
     this.store.dispatch(addToWishlist({ product: this.product }));
+    this._toastService.info('Product added to wishlist');
   }
 }

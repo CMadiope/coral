@@ -19,6 +19,7 @@ import { StoreModule } from '@ngrx/store';
 import { productReducer } from './state/product/product.reducer';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { metaReducers } from './state/app.state';
+import { ToastService, AngularToastifyModule } from 'angular-toastify';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,10 @@ import { metaReducers } from './state/app.state';
     FontAwesomeModule,
     HttpClientModule,
     AppRoutingModule,
+    AngularToastifyModule,
     StoreModule.forRoot({ products: productReducer }, { metaReducers }),
   ],
-  providers: [],
+  providers: [ToastService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
